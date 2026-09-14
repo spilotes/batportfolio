@@ -284,10 +284,53 @@ button {
 
 .menu-toggle {
   display: none;
+  position: relative;
+  width: 42px;
+  height: 42px;
   padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
   color: var(--white);
   background: transparent;
-  font-size: 1.3rem;
+}
+
+.menu-toggle span {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--white);
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    top 0.25s ease;
+}
+
+.menu-toggle span:nth-child(1) {
+  top: 12px;
+}
+
+.menu-toggle span:nth-child(2) {
+  top: 19px;
+}
+
+.menu-toggle span:nth-child(3) {
+  top: 26px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  top: 19px;
+  transform: rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  top: 19px;
+  transform: rotate(-45deg);
 }
 
 .hero {
